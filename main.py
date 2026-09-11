@@ -14,7 +14,13 @@ message = """<@&1541830487532900533> ついてきて
 
 response = requests.post(
     WEBHOOK_URL,
-    json={"content": message}
+    json={
+        "content": message,
+        "allowed_mentions": {
+            "roles": ["1541830487532900533"]
+        }
+    }
 )
 
-print(response.status_code)
+print("Status:", response.status_code)
+print(response.text)
