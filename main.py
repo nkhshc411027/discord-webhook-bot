@@ -3,7 +3,7 @@ import requests
 
 WEBHOOK_URL = os.environ["DISCORD_WEBHOOK_URL"]
 
-message = """ついてきて
+message = """<@&1541830487532900533> ついてきて
 
 ねねねねねねね
 ねねねねねねね
