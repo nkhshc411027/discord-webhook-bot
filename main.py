@@ -1,20 +1,20 @@
+import os
 import requests
 
-WEBHOOK_URL = "ここにDiscordのWebhook URLを入れます"
+WEBHOOK_URL = os.environ["DISCORD_WEBHOOK_URL"]
 
 message = """ついてきて
 
 ねねねねねねね
 ねねねねねねね
 ねねねねねねねね(ねね！)
-ねねねねねね(ね！)
+ねねねねねね(ねね！)
 ねねねねね(ね！)
 ね"""
 
-data = {
-    "content": message
-}
-
-response = requests.post(WEBHOOK_URL, json=data)
+response = requests.post(
+    WEBHOOK_URL,
+    json={"content": message}
+)
 
 print(response.status_code)
